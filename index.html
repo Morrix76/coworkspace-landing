@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoworkSpace Manager Pro - The Future of Coworking Management Software</title>
-    <meta name="description" content="Complete management software for business centers and coworking spaces. Analytics dashboard, bookings, billing and much more.">
+    <title>CoworkSpace Manager Pro - Early Access Demo</title>
+    <meta name="description" content="Get early access to the future of coworking management software. Join our demo program and be the first to experience the complete solution.">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -23,10 +23,22 @@
             overflow-x: hidden;
         }
         
+        /* Early Access Banner */
+        .early-access-banner {
+            background: linear-gradient(135deg, #4F46E5, #06B6D4);
+            color: white;
+            text-align: center;
+            padding: 0.75rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1001;
+        }
+        
         /* Header */
         .header {
             position: fixed;
-            top: 0;
+            top: 48px;
             left: 0;
             right: 0;
             background: rgba(255, 255, 255, 0.95);
@@ -90,7 +102,7 @@
         
         /* Hero Section */
         .hero {
-            padding: 8rem 2rem 4rem;
+            padding: 12rem 2rem 4rem;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             position: relative;
             overflow: hidden;
@@ -117,6 +129,19 @@
             text-align: center;
             position: relative;
             z-index: 10;
+        }
+        
+        .beta-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
         .hero h1 {
@@ -300,7 +325,7 @@
         }
         
         .pricing-card.featured::before {
-            content: 'Most Popular';
+            content: 'Coming Soon';
             position: absolute;
             top: -12px;
             left: 50%;
@@ -320,16 +345,17 @@
         }
         
         .pricing-card .price {
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: 800;
-            color: #4F46E5;
+            color: #64748B;
             margin-bottom: 0.5rem;
         }
         
-        .pricing-card .price span {
-            font-size: 1rem;
+        .pricing-card .price-note {
+            font-size: 0.9rem;
             color: #64748B;
-            font-weight: 500;
+            margin-bottom: 1rem;
+            font-style: italic;
         }
         
         .pricing-features {
@@ -352,6 +378,64 @@
             font-size: 1.1rem;
         }
         
+        /* Waitlist Form */
+        .waitlist-form {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 500px;
+            margin: 2rem auto;
+        }
+        
+        .waitlist-form h3 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .submit-btn {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            color: #4F46E5;
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: white;
+            transform: translateY(-1px);
+        }
+        
         /* CTA Section */
         .cta-section {
             padding: 6rem 2rem;
@@ -372,6 +456,15 @@
             opacity: 0.9;
         }
         
+        .demo-credentials {
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 2rem;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
         /* Footer */
         .footer {
             background: #1F2937;
@@ -383,6 +476,15 @@
         .footer p {
             opacity: 0.7;
             margin-bottom: 1rem;
+        }
+        
+        .privacy-note {
+            font-size: 0.85rem;
+            color: #94A3B8;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
         }
         
         /* Responsive */
@@ -431,32 +533,57 @@
     </style>
 </head>
 <body>
+    <!-- Early Access Banner -->
+    <div class="early-access-banner">
+        🚀 Early Access Demo - Join the waitlist for exclusive access to the full version
+    </div>
+
     <!-- Header -->
     <header class="header">
         <nav class="nav">
             <div class="logo">CoworkSpace Pro</div>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
-                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#plans">Plans</a></li>
                 <li><a href="#demo">Demo</a></li>
             </ul>
-            <a href="#demo" class="cta-button">Try Free</a>
+            <a href="#demo" class="cta-button">Try Demo</a>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
+            <div class="beta-badge">🔥 Early Access Demo</div>
             <h1 class="fade-in">The Future of Coworking Management</h1>
-            <p class="fade-in">Complete software to manage bookings, clients, billing and analytics. Modern design, advanced technology, guaranteed results.</p>
+            <p class="fade-in">Experience the complete software to manage bookings, clients, billing and analytics. Modern design, advanced technology, proven results.</p>
             
             <div class="hero-buttons fade-in">
                 <a href="#demo" class="btn-primary">🚀 Try Live Demo</a>
-                <a href="#features" class="btn-secondary">Explore Features</a>
+                <a href="#waitlist" class="btn-secondary">Join Waitlist</a>
             </div>
             
             <div class="demo-preview fade-in">
                 <img src="dashboard_eng.png" alt="CoworkSpace Manager Pro Dashboard" />
+            </div>
+            
+            <div class="waitlist-form fade-in" id="waitlist">
+                <h3>Get Early Access</h3>
+                <form id="waitlistForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Company Name (Optional)">
+                    </div>
+                    <button type="submit" class="submit-btn">Join Waitlist</button>
+                </form>
+                <div class="privacy-note">
+                    By joining the waitlist, you agree to receive updates about CoworkSpace Pro. We respect your privacy and will never share your data.
+                </div>
             </div>
         </div>
     </section>
@@ -510,17 +637,18 @@
     </section>
 
     <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
+    <section class="pricing" id="plans">
         <div class="container">
             <div class="section-title">
-                <h2>Transparent and Affordable Pricing</h2>
-                <p>Choose the perfect plan for your business size</p>
+                <h2>Planned Pricing Tiers</h2>
+                <p>Join the waitlist to get special launch pricing when we go live</p>
             </div>
             
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3>Starter</h3>
-                    <div class="price">€29<span>/month</span></div>
+                    <div class="price">Coming Soon</div>
+                    <div class="price-note">Perfect for small spaces</div>
                     <ul class="pricing-features">
                         <li>Up to 50 bookings/month</li>
                         <li>3 manageable spaces</li>
@@ -528,12 +656,13 @@
                         <li>Email support</li>
                         <li>Daily backup</li>
                     </ul>
-                    <a href="#demo" class="cta-button" style="width: 100%; text-align: center; display: block;">Start Free</a>
+                    <a href="#waitlist" class="cta-button" style="width: 100%; text-align: center; display: block;">Join Waitlist</a>
                 </div>
                 
                 <div class="pricing-card featured">
                     <h3>Professional</h3>
-                    <div class="price">€79<span>/month</span></div>
+                    <div class="price">Coming Soon</div>
+                    <div class="price-note">Most popular choice</div>
                     <ul class="pricing-features">
                         <li>Unlimited bookings</li>
                         <li>Unlimited spaces</li>
@@ -543,12 +672,13 @@
                         <li>Priority support</li>
                         <li>API access</li>
                     </ul>
-                    <a href="#demo" class="cta-button" style="width: 100%; text-align: center; display: block;">14-Day Free Trial</a>
+                    <a href="#waitlist" class="cta-button" style="width: 100%; text-align: center; display: block;">Get Early Access</a>
                 </div>
                 
                 <div class="pricing-card">
                     <h3>Enterprise</h3>
-                    <div class="price">€199<span>/month</span></div>
+                    <div class="price">Coming Soon</div>
+                    <div class="price-note">For growing businesses</div>
                     <ul class="pricing-features">
                         <li>Multi-location</li>
                         <li>White-label</li>
@@ -558,7 +688,7 @@
                         <li>Personal training</li>
                         <li>Real-time backup</li>
                     </ul>
-                    <a href="#demo" class="cta-button" style="width: 100%; text-align: center; display: block;">Contact Us</a>
+                    <a href="mailto:francesco.ciardo@coworkspace-pro.com" class="cta-button" style="width: 100%; text-align: center; display: block;">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -567,17 +697,20 @@
     <!-- CTA Section -->
     <section class="cta-section" id="demo">
         <div class="container">
-            <h2>Ready to Transform Your Business?</h2>
-            <p>Start today with our free demo. No credit card required.</p>
+            <h2>Try Our Live Demo</h2>
+            <p>Experience the full functionality with our interactive demo. No signup required.</p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                 <a href="https://app.coworkspace-pro.com" class="btn-primary" style="background: white; color: #4F46E5;">🚀 Access Live Demo</a>
-                <a href="mailto:francesco.ciardo@coworkspace-pro.com" class="btn-secondary">Request Consultation</a>
+                <a href="mailto:francesco.ciardo@coworkspace-pro.com" class="btn-secondary">Request Information</a>
             </div>
             
-            <div style="margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 16px; backdrop-filter: blur(12px);">
+            <div class="demo-credentials">
                 <h3 style="margin-bottom: 1rem;">Demo Credentials</h3>
                 <p><strong>Email:</strong> admin@opuscentersrl.it<br>
                 <strong>Password:</strong> admin123</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                    This is a fully functional demo with sample data. Feel free to explore all features!
+                </p>
             </div>
         </div>
     </section>
@@ -586,7 +719,11 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 CoworkSpace Manager Pro - Developed by Francesco Ciardo</p>
-            <p>Revolutionizing the future of coworking spaces</p>
+            <p>Currently in Early Access Demo Phase</p>
+            <div class="privacy-note">
+                This demo version is for evaluation purposes only. No real payment processing is active. 
+                We collect minimal data in compliance with privacy regulations.
+            </div>
         </div>
     </footer>
 
@@ -595,10 +732,29 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
+        });
+
+        // Waitlist form handling
+        document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple form handling - replace with your actual endpoint
+            const formData = new FormData(this);
+            const name = this.querySelector('input[type="text"]').value;
+            const email = this.querySelector('input[type="email"]').value;
+            
+            // For demo purposes, just show success message
+            alert(`Thanks ${name}! We'll contact you at ${email} when we launch.`);
+            
+            // Reset form
+            this.reset();
         });
 
         // Fade in animation on scroll
