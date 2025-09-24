@@ -478,6 +478,25 @@
             margin-bottom: 1rem;
         }
         
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #94A3B8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
         .privacy-note {
             font-size: 0.85rem;
             color: #94A3B8;
@@ -485,6 +504,61 @@
             padding: 1rem;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
+        }
+        
+        /* Cookie Banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(31, 41, 55, 0.95);
+            backdrop-filter: blur(12px);
+            color: white;
+            padding: 1rem 2rem;
+            z-index: 2000;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: none;
+        }
+        
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .cookie-text {
+            flex: 1;
+            font-size: 0.9rem;
+        }
+        
+        .cookie-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .cookie-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .cookie-accept {
+            background: #4F46E5;
+            color: white;
+        }
+        
+        .cookie-decline {
+            background: transparent;
+            color: #94A3B8;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         /* Responsive */
@@ -509,6 +583,11 @@
             
             .pricing-card.featured {
                 transform: none;
+            }
+            
+            .cookie-content {
+                flex-direction: column;
+                text-align: center;
             }
         }
         
@@ -718,6 +797,11 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="mailto:francesco.ciardo@coworkspace-pro.com">Contact</a>
+            </div>
             <p>&copy; 2025 CoworkSpace Manager Pro - Developed by Francesco Ciardo</p>
             <p>Currently in Early Access Demo Phase</p>
             <div class="privacy-note">
@@ -726,6 +810,20 @@
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                We use cookies to improve your browsing experience and analyze site traffic. 
+                <a href="privacy-policy.html" style="color: #06B6D4;">Learn more</a>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+                <button class="cookie-btn cookie-decline" onclick="declineCookies()">Decline</button>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Smooth scrolling
@@ -755,6 +853,28 @@
             
             // Reset form
             this.reset();
+        });
+
+        // Cookie consent handling
+        function showCookieBanner() {
+            if (!localStorage.getItem('cookieConsent')) {
+                document.getElementById('cookieBanner').style.display = 'block';
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+
+        // Show cookie banner on page load
+        window.addEventListener('load', function() {
+            setTimeout(showCookieBanner, 2000); // Show after 2 seconds
         });
 
         // Fade in animation on scroll
